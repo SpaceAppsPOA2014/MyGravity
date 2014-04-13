@@ -35,6 +35,7 @@
 
 	<script type="text/javascript">
 		// Move Geocorder inside the sidebar
+	$('#leaflet-control-geosearch-qry').attr("placeholder", "search for location...");
     $('#leaflet-control-geosearch-qry').parent().appendTo($('#search'));
 
     var newLocationButton = $('#new-location').hide();
@@ -49,6 +50,7 @@
       newLocationButton.hide();
       $('#search').show();
 	  $('#leaflet-control-geosearch-qry').val("");
+	  $('#leaflet-control-geosearch-qry').attr("placeholder", "search for location...");
 	  $('#leaflet-control-geosearch-qry').text("");
       $('.leaflet-popup').remove();
     });
