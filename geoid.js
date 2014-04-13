@@ -9,7 +9,7 @@ module.exports = function geoid(latitude, longitude, callback){
 		if (err) return callback(err)
 
 		var $ = cheerio.load(html),
-				height = $("font[color='blue']").eq(1).text()
+				height = $("font[color='blue']").eq(0).text()
 
 		callback(err, height)
 
