@@ -5,6 +5,14 @@ function Sidebar(selector){
   });
 }
 
-Sidebar.prototype.show = function() {
-	this.view.show();
+Sidebar.prototype.show = function () {
+  this.view.show();
+
+  $('#play').on('click', function (sidebar) {
+    sidebar.showGame();
+  });
+};
+
+Sidebar.prototype.showGame = function () {
+  this.view.setContent('banana');
 };
