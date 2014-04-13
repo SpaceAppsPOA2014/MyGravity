@@ -59,17 +59,17 @@ var game = new Phaser.Game(
 function preload() {
     var assets = {
         spritesheet: {
-            birdie: ['app/game/assets/birdie.png', 24, 24],
-            clouds: ['app/game/assets/clouds.png', 128, 64]
+            birdie: ['assets/birdie.png', 24, 24],
+            clouds: ['assets/clouds.png', 128, 64]
         },
         image: {
-            tower: ['app/game/assets/tower.png'],
-            fence: ['app/game/assets/fence.png']
+            tower: ['assets/tower.png'],
+            fence: ['assets/fence.png']
         },
         audio: {
-            flap: ['app/game/assets/flap.wav'],
-            score: ['app/game/assets/score.wav'],
-            hurt: ['app/game/assets/hurt.wav']
+            flap: ['assets/flap.wav'],
+            score: ['assets/score.wav'],
+            hurt: ['assets/hurt.wav']
         }
     };
     Object.keys(assets).forEach(function(type) {

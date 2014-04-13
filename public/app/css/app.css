@@ -10,6 +10,15 @@
   height: 100%;
 }
 
+.game {
+  height: 568px;
+  width: 320px;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 /*.leaflet-left { transition: left 0s !important; }*/
 body {margin: 0;}
 

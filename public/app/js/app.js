@@ -14,7 +14,9 @@ map.onLocate(function(locations){
   api.geoid(location.Y, location.X, function(geoid_height){
     var button = $("<button id='play' type='button'>Let's start the GAME!!</button>");
     button.on('click', function (e) {
-      $('#game').css('visibility', 'visible');
+      var iframeGame = $('.game').contents();
+      iframeGame.find('#game').css('visibility', 'visible');
+
       $('#search').hide();
     });
 
