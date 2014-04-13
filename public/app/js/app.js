@@ -15,6 +15,7 @@ map.onLocate(function(locations){
     var button = $("<button id='play' type='button'>Let's start the GAME!!</button>");
     button.on('click', function (e) {
       $('#game').css('visibility', 'visible');
+      $('#search').hide();
     });
 
     marker.getPopup().setContent(
