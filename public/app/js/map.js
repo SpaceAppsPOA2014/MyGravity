@@ -46,6 +46,10 @@ Map.prototype.onLocate = function(callback) {
 		var control = $('#leaflet-control-geosearch leaflet-control'),
 				resultList = $('#leaflet-control-geosearch-results');
 
+		$('.menu .item').remove();
+
+		$('.sugestions').hide();
+
 		control.addClass('active visible');
 		resultList.addClass('visible');
 
