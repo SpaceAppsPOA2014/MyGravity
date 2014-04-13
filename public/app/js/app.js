@@ -14,6 +14,12 @@ map.onLocate(function(locations){
   api.geoid(location.Y, location.X, function(geoid_height){
     var button = $("<button id='play' class='ui blue button'>Play!</button>");
     button.on('click', function (e) {
+	  var iframeGame = document.getElementsByClassName('game')[0];
+
+
+	  iframeGame.contentWindow['GRAVITY'] = parseFloat(geoid_height);
+
+
       e.target.disabled;
       e.target.classList.add('disabled');
 
@@ -21,6 +27,7 @@ map.onLocate(function(locations){
       iframeContent.find('#game').css('visibility', 'visible');
 
       $('#search').hide();
+
       $('#new-location').show();
     });
 
@@ -33,5 +40,7 @@ map.onLocate(function(locations){
     );
 
     $(".leaflet-popup-content").append(button);
+
+
   });
 });

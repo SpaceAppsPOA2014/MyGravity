@@ -1,6 +1,6 @@
 var DEBUG = false;
 var SPEED = 180;
-var GRAVITY = 10;
+var GRAVITY;
 var FLAP = 420;
 var SPAWN_RATE = 1 / 1.2;
 var OPENING = 144;
@@ -34,6 +34,11 @@ Clay.ready = function( fn ) {
 
 if(typeof cards !== 'undefined' && cards.kik)
     window.location.href = 'card://flirtybird.clay.io';
+
+function calculateGravity() {
+    var gravity = (20 * GRAVITY) / 191;
+    return (10 + gravity);
+}
 
 function main() {
 
@@ -139,7 +144,7 @@ function create() {
     birdie.animations.add('fly', [0, 1, 2, 3], 10, true);
     birdie.inputEnabled = true;
     birdie.body.collideWorldBounds = true;
-    birdie.body.gravity.y = GRAVITY;
+    birdie.body.gravity.y = calculateGravity();
     // Add fence
     fence = game.add.tileSprite(0, game.world.height - 32, game.world.width, 32, 'fence');
     fence.tileScale.setTo(2, 2);
@@ -251,6 +256,7 @@ function create() {
 }
 
 function reset() {
+
     gameStarted = false;
     gameOver = false;
     score = 0;
@@ -271,6 +277,8 @@ function reset() {
 
 function start() {
     credits.renderable = false;
+    birdie.body.gravity.y = calculateGravity();
+    
     birdie.body.allowGravity = true;
     // SPAWN FINGERS!
     towersTimer = new Phaser.Timer(game);
@@ -279,7 +287,7 @@ function start() {
     towersTimer.add(2);
     // Show score
     scoreText.setText(score);
-    gravityText.setText('gravity:' + GRAVITY);
+    gravityText.setText('gravity:' + calculateGravity().toFixed(2));
     instText.renderable = false;
     // START!
     gameStarted = true;

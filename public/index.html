@@ -42,6 +42,10 @@
     newLocationButton.click(function () {
       var iframeGame = $('.game').contents();
       iframeGame.find('#game').css('visibility', 'hidden');
+
+      $('.game').attr('src', 'app/game/game.html');
+      
+
       newLocationButton.hide();
       $('#search').show();
       $('.leaflet-popup').remove();
