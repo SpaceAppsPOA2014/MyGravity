@@ -1,56 +1,32 @@
 /*RESET some leaftlet properties*/
-#sidebar {
-  width: 25%;
-  height: 100%;
-  float: left;
-}
-
-#new-location {
-  margin: 10% 20%;
-}
-
-#play {
-  display: block;
-  width: 100%;
-}
-
-#map {
-  width: 75%;
-  height: 100%;
-}
-
-.game {
-  height: 568px;
-  width: 320px;
-  border: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-/*.leaflet-left { transition: left 0s !important; }*/
-body {
-	margin: 0;
-	font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
-
+#map { height: 100%; }
+.leaflet-left { transition: left 0s !important; }
+body {margin: 0;}
 
 * { box-sizing: border-box; }
 
+.leaflet-sidebar > .leaflet-control {
+  padding: 20px;
+}
+
 /*Re-style geocoder*/
-.leaflet-control-geosearch, .leaflet-control-geosearch ul {
-	margin: 10px 0 0 0;
-	padding: 5px;
-	width: 100%;
-	height: auto;
+.leaflet-control-geosearch {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.leaflet-control-geosearch ul {
+  margin: 10px 0 0 0;
+  padding: 5px;
+  width: 100%;
 }
 
 .leaflet-control-geosearch-msg ul {
-	list-style: none;
-	height: auto;
-	background: none;
-	padding: 0;
+  list-style: none;
+  height: auto;
+  background: none;
+  padding: 0;
 }
 
 .leaflet-control-geosearch ul li {
@@ -60,11 +36,11 @@ body {
     text-indent: 4px;
 }
 
-.leaflet-control-geosearch input {
-	width: 100%;
-	font-size: 16px;
-	padding: 15px;
-	border-radius: 5px;
-	border: 1px #ccc solid;
-	outline: none;
+.leaflet-container .leaflet-control-geosearch input {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px #ccc solid;
+  outline: none;
 }

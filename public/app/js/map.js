@@ -1,7 +1,6 @@
 function Map(selector){
 	this.mapView = L.map(selector);
 	this.addTileProvider('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}');
-	
 	this.addGeoSearch( new L.GeoSearch.Provider.OpenStreetMap() );
 }
 
