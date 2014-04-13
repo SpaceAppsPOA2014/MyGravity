@@ -3,9 +3,7 @@
   "version": "0.0.0",
   "description": "App game developed for the NASA Space Apps Challenge 2014",
   "main": "index.js",
-  "scripts": {
-    "start": "./index.js"
-  },
+  
   "repository": {
     "type": "git",
     "url": "https://github.com/SpaceAppsPOA2014/MyGravity.git"
