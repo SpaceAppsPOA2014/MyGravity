@@ -12,8 +12,11 @@ map.onLocate(function(locations){
   marker.bindPopup("Loading Geoid Height").openPopup()
 
   api.geoid(location.Y, location.X, function(geoid_height){
-    var button = $("<div id='play' class='ui blue button'>Play!</div>");
+    var button = $("<button id='play' class='ui blue button'>Play!</button>");
     button.on('click', function (e) {
+      e.target.disabled = true;
+      e.target.classList.add('disabled');
+
       var iframeContent = $('.game').contents();
       iframeContent.find('#game').css('visibility', 'visible');
 
