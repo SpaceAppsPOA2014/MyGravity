@@ -1,6 +1,7 @@
 function Map(selector){
 	this.mapView = L.map(selector);
-	this.addTileProvider('http://162.243.104.38:9000/v2/sixdegrees/{z}/{x}/{y}.png');
+	//this.addTileProvider('http://162.243.104.38:9000/v2/sixdegrees/{z}/{x}/{y}.png');
+	this.addTileProvider('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png');
 	this.addGeoSearch( new L.GeoSearch.Provider.OpenStreetMap() );
 }
 
@@ -16,7 +17,7 @@ Map.prototype.addGeoSearch = function(provider) {
 	new L.Control.GeoSearch({
 		zoomLevel: 8,
 		provider: provider,
-		showMarker: false
+		showMarker: true
 	}).addTo(this.mapView);
 };
 

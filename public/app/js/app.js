@@ -14,7 +14,9 @@ map.onLocate(function(locations){
   marker.bindPopup("Loading Geoid Height").openPopup()
 
   api.geoid(location.Y, location.X, function(geoid_height){
-    marker.getPopup().setContent("Geoid Height: " + geoid_height)
+    marker.getPopup().setContent(location.Label + "</br></br> Latitude: " + location.Y 
+    	+ "</br>Longitude: " + location.X 
+    	+ "</br></br> Geoid Height: " + geoid_height)
   });
 
 })
