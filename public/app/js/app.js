@@ -10,6 +10,7 @@ map.onLocate(function(location){
   marker.bindPopup("Loading Geoid Height").openPopup()
 
   api.geoid(location.Y, location.X, function(geoid_height){
+
     var button = $("<button id='play' class='ui blue button'>Play!</button>");
     button.on('click', function (e) {
 	  var iframeGame = document.getElementsByClassName('game')[0];

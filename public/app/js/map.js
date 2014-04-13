@@ -1,7 +1,7 @@
 function Map(selector){
 	this.mapView = L.map(selector);
 	this.addTileProvider('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}');
-	
+
 	this.addGeoSearch( new L.GeoSearch.Provider.OpenStreetMap() );
 }
 
@@ -50,15 +50,16 @@ Map.prototype.onLocate = function(callback) {
 		resultList.addClass('visible');
 
 		results.Locations.forEach(function (location) {
-			resultList.append('<li class="item truncate">'+location.Label+'</li>');
+			var id = (location.X + "" + location.Y).replace(/\./g, '');
+			resultList.append('<li class="item truncate" id="' + id +'" >'+location.Label+'</li>');
 
-			$('.item').click(function () {
-				callback(location);
+			$('#' + id).on('click', function () {
 				control.removeClass('active visible');
 				resultList.removeClass('visible');
 
-				$('.item').remove();
-				$('#play').remove();
+				callback(location);
+
+				$('.menu .item').remove();
 			});
 		});
 	});
