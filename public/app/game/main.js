@@ -1,7 +1,7 @@
 var DEBUG = false;
 var SPEED = 180;
-var GRAVITY;
 var FLAP = 420;
+var GRAVITY = location.hash.replace('#', '');
 var SPAWN_RATE = 1 / 1.2;
 var OPENING = 144;
 
@@ -278,7 +278,7 @@ function reset() {
 function start() {
     credits.renderable = false;
     birdie.body.gravity.y = calculateGravity();
-    
+
     birdie.body.allowGravity = true;
     // SPAWN FINGERS!
     towersTimer = new Phaser.Timer(game);

@@ -27,7 +27,7 @@
       </ul>
     </div>
 
-    <iframe class="game" src="app/game/game.html"></iframe>
+    <iframe class="game"></iframe>
   </div>
   <div id="map"></div>
 
@@ -60,7 +60,7 @@
       var iframeGame = $('.game').contents();
       iframeGame.find('#game').css('visibility', 'hidden');
 
-      $('.game').attr('src', 'app/game/game.html');
+      $('.game').attr('src', '');
 
       newLocationButton.hide();
       $('.sugestions').toggle();
@@ -72,8 +72,6 @@
 
       $('.leaflet-popup').remove();
     });
-
-
 
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-49930264-1']);
