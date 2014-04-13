@@ -1,19 +1,25 @@
 <html>
 <head>
-	<title>MyGravity</title>
-	<script src="app/vendors/normalize-css/normalize.css"></script>
-	<link rel="stylesheet" href="app/vendors/leaflet-dist/leaflet.css" />
+  <title>MyGravity</title>
+  <script src="app/vendors/normalize-css/normalize.css"></script>
+  <link rel="stylesheet" href="app/vendors/leaflet-dist/leaflet.css" />
 	<!-- <link rel="stylesheet" href="app/vendors/L.GeoSearch/src/css/l.geosearch.css" /> -->
 	<link rel="stylesheet" href="app/vendors/leaflet-sidebar/src/L.Control.Sidebar.css" />
 	<link rel="stylesheet" href="app/css/app.css" />
+
+	<!-- GAME -->
+	<link rel="stylesheet" href="app/game/assets/game.css" />
 </head>
 <body>
 
-	<div id="sidebar">
-		<!-- <input id="searchInput" type="text" placeholder="search"></input>
-		<button>Search</button> -->
-	</div>
-	<div id="map"></div>
+  <div id="sidebar">
+    <div id="search">
+      <!-- <input id="searchInput" type="text" placeholder="search"></input>
+      <button>Search</button> -->
+    </div>
+    <div id="game"></div>
+  </div>
+  <div id="map"></div>
 
 	<script src="app/vendors/jquery/dist/jquery.min.js"></script>
 	<script src="app/vendors/leaflet-dist/leaflet.js"></script>
@@ -26,9 +32,13 @@
 	<script src="app/js/sidebar.js"></script>
 	<script src="app/js/app.js"></script>
 
+	<!-- GAME -->
+	<script src="app/game/phaser.min.js"></script>
+	<script src="app/game/main.js?1392357744097"></script>
+
 	<script type="text/javascript">
 		// Move Geocorder inside the sidebar
-		$('#leaflet-control-geosearch-qry').parent().appendTo($('#sidebar'))
+		$('#leaflet-control-geosearch-qry').parent().appendTo($('#search'))
 	</script>
 
 </body>
