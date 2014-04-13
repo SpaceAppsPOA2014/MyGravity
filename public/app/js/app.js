@@ -14,7 +14,7 @@ map.onLocate(function(locations){
   api.geoid(location.Y, location.X, function(geoid_height){
     var button = $("<button id='play' type='button'>Let's start the GAME!!</button>");
     button.on('click', function (e) {
-      // e.view.sidebar.showGame();
+      $('#game').css('visibility', 'visible');
     });
 
     marker.getPopup().setContent(
