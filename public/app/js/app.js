@@ -14,7 +14,7 @@ map.onLocate(function(locations){
   api.geoid(location.Y, location.X, function(geoid_height){
     var button = $("<button id='play' class='ui blue button'>Play!</button>");
     button.on('click', function (e) {
-      e.target.disabled = true;
+      e.target.disabled;
       e.target.classList.add('disabled');
 
       var iframeContent = $('.game').contents();
@@ -32,6 +32,6 @@ map.onLocate(function(locations){
       "</br>"
     );
 
-    $(".leaflet-popup-content").append(button)
+    $(".leaflet-popup-content").append(button);
   });
 });
