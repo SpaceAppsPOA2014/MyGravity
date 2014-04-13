@@ -1,7 +1,10 @@
 function Map(selector){
 	this.mapView = L.map(selector);
 	//this.addTileProvider('http://162.243.104.38:9000/v2/sixdegrees/{z}/{x}/{y}.png');
-	this.addTileProvider('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png');
+	//this.addTileProvider('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png');
+	//this.addTileProvider('http://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}');
+	this.addTileProvider('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}');
+	
 	this.addGeoSearch( new L.GeoSearch.Provider.OpenStreetMap() );
 }
 
