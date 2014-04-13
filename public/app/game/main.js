@@ -36,8 +36,8 @@ if(typeof cards !== 'undefined' && cards.kik)
     window.location.href = 'card://flirtybird.clay.io';
 
 function calculateGravity() {
-    var gravity = (20 * GRAVITY) / 191;
-    return (10 + gravity);
+    var gravity = (30 * GRAVITY) / 191;
+    return (8 + gravity);
 }
 
 function main() {
@@ -168,7 +168,7 @@ function create() {
         game.world.height / 5,
         "",
         {
-            font: '16px "Press Start 2P"',
+            font: '14px "Press Start 2P"',
             fill: '#fff',
             stroke: '#430',
             strokeThickness: 8,
@@ -287,7 +287,7 @@ function start() {
     towersTimer.add(2);
     // Show score
     scoreText.setText(score);
-    gravityText.setText('gravity:' + calculateGravity().toFixed(2));
+    gravityText.setText('Geoid height:' + GRAVITY);
     instText.renderable = false;
     // START!
     gameStarted = true;
