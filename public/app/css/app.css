@@ -1,0 +1,37 @@
+/*RESET some leaftlet properties*/
+#map { height: 100%; }
+.leaflet-left { transition: left 0s !important; }
+body {margin: 0;}
+
+* { box-sizing: border-box; }
+
+/*Re-style geocoder*/
+.leaflet-control-geosearch, .leaflet-control-geosearch ul {
+	margin: 10px 0 0 0;
+	padding: 5px;
+	width: 100%;
+	height: auto;
+}
+
+.leaflet-control-geosearch-msg ul {
+	list-style: none;
+	height: auto;
+	background: none;
+	padding: 0;
+}
+
+.leaflet-control-geosearch ul li {
+    border-radius: 4px;
+    margin: 2px 0;
+    padding: 4px;
+    text-indent: 4px;
+}
+
+.leaflet-container .leaflet-control-geosearch input {
+	width: 100%;
+	font-size: 16px;
+	padding: 15px;
+	border-radius: 5px;
+	border: 1px #ccc solid;
+	outline: none;
+}
