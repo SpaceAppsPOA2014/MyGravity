@@ -4,6 +4,9 @@ angular.module('gravityBird', ['ngRoute'])
 			templateUrl: 'partials/home.html',
 			controller: 'homeCtrl'
 		});
-		$routeProvider.when('/game/:geoid', {templateUrl: 'partials/game.html'});
+		$routeProvider.when('/game/:geoid', {
+			templateUrl: 'partials/game.html',
+			controller: 'gameCtrl'
+		});
 		$routeProvider.otherwise({redirectTo: '/'})
 	}])

@@ -1,8 +1,12 @@
-function Map(selector){
+function Map(selector){	
 	this.mapView = L.map(selector);
 	this.addTileProvider('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}');
-	this.addGeoSearch( new L.GeoSearch.Provider.OpenStreetMap() );
+	this.addGeoSearch( new L.GeoSearch.Provider.OpenStreetMap() );		
 }
+
+Map.prototype.addLayer = function(layer) {
+	layer.addTo(this.mapView)
+};
 
 Map.prototype.setView = function(latlng) {
 	this.mapView.setView(latlng, 8);

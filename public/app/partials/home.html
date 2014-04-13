@@ -1,4 +1,33 @@
 <div id="sidebar">
-	<div id="search"></div>
+	<div id="search"></div>	
+	<div id="search_result" class="list-group">
+	  
+		<div class="list-group-item">
+			<h4 class="list-group-item-heading">{{search.heading}}</h4>
+		</div>	  
+
+		<div class="list-group-item" 
+		 ng-mouseover="overLocation(location)"
+		 ng-mouseleave="leaveLocation(location)"
+		 ng-repeat="location in search.locations">	  	 
+
+			<div class="list-group-item-info">
+				<h3 class="list-group-item-heading">{{location.Label}}</h3>
+				<p class="list-group-item-text"><i>({{location.Y}}, {{location.X}})</i></p>
+				<i ng-show="location.geoid">Gravity Variation: {{location.geoid}}</i>
+			</div>
+
+			<div class="list-group-item-action">				
+				<a ng-click="openGame(location)" class="btn">Play</a>				
+			</div>
+
+		</div>
+
+	</div>
 </div>
 <div id="map"></div>
+
+<div class="overlay overlay-hugeinc" ng-class="{open: game.open}">
+	<button type="button" class="overlay-close" ng-click="closeGame()">Close</button>
+	<iframe class="game" src="../app/game/game.html"></iframe>
+</div>
