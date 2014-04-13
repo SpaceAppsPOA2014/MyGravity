@@ -12,19 +12,21 @@ map.onLocate(function(locations){
   marker.bindPopup("Loading Geoid Height").openPopup()
 
   api.geoid(location.Y, location.X, function(geoid_height){
-    var button = $("<button id='play' type='button'>Let's start the GAME!!</button>");
+    var button = $("<div id='play' class='ui blue button'>Play!</div>");
     button.on('click', function (e) {
-      var iframeGame = $('.game').contents();
-      iframeGame.find('#game').css('visibility', 'visible');
+      var iframeContent = $('.game').contents();
+      iframeContent.find('#game').css('visibility', 'visible');
 
       $('#search').hide();
+      $('#new-location').show();
     });
 
     marker.getPopup().setContent(
       location.Label +
       "</br></br> Latitude: " + location.Y +
       "</br>Longitude: " + location.X +
-      "</br></br> Geoid Height: " + geoid_height
+      "</br></br> Geoid Height: " + geoid_height +
+      "</br>"
     );
 
     $(".leaflet-popup-content").append(button)

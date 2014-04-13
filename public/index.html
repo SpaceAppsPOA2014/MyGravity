@@ -6,6 +6,7 @@
 	<!-- <link rel="stylesheet" href="app/vendors/L.GeoSearch/src/css/l.geosearch.css" /> -->
 	<link rel="stylesheet" href="app/vendors/leaflet-sidebar/src/L.Control.Sidebar.css" />
 	<link rel="stylesheet" href="app/css/app.css" />
+	<link rel="stylesheet" href="app/css/semantic.min.css" />
 
 </head>
 <body>
@@ -15,6 +16,7 @@
       <!-- <input id="searchInput" type="text" placeholder="search"></input>
       <button>Search</button> -->
     </div>
+    <div id="new-location" class='ui blue button'>New Location</div>
     <iframe class="game" src="app/game/game.html"></iframe>
   </div>
   <div id="map"></div>
@@ -29,11 +31,21 @@
 	<script src="app/js/api.js"></script>
 	<script src="app/js/sidebar.js"></script>
 	<script src="app/js/app.js"></script>
+	<script src="app/js/semantic.min.js"></script>
 
 	<script type="text/javascript">
 		// Move Geocorder inside the sidebar
-		$('#leaflet-control-geosearch-qry').parent().appendTo($('#search'))
-	</script>
+    $('#leaflet-control-geosearch-qry').parent().appendTo($('#search'));
+
+    var newLocationButton = $('#new-location').hide();
+
+    newLocationButton.click(function () {
+      var iframeGame = $('.game').contents();
+      iframeGame.find('#game').css('visibility', 'hidden');
+      newLocationButton.hide();
+      $('#search').show();
+    });
+  </script>
 
 </body>
 </html>

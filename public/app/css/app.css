@@ -5,6 +5,14 @@
   float: left;
 }
 
+#new-location {
+  margin: 10% 20%;
+}
+
+#play {
+  display: block;
+}
+
 #map {
   width: 75%;
   height: 100%;
@@ -20,7 +28,12 @@
 }
 
 /*.leaflet-left { transition: left 0s !important; }*/
-body {margin: 0;}
+body {
+	margin: 0;
+	font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+
 
 * { box-sizing: border-box; }
 
