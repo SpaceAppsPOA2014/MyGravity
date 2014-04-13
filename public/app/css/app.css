@@ -1,5 +1,15 @@
 /*RESET some leaftlet properties*/
-#map { height: 100%; }
+#sidebar {
+  width: 25%;
+  height: 100%;
+  float: left;
+}
+
+#map {
+  width: 75%;
+  height: 100%;
+}
+
 .leaflet-left { transition: left 0s !important; }
 body {margin: 0;}
 
