@@ -1,0 +1,113 @@
+/*RESET some leaftlet properties*/
+#map { height: 100%; }
+.leaflet-left { transition: left 0s !important; }
+body {margin: 0;}
+
+* { box-sizing: border-box; }
+
+.leaflet-sidebar > .leaflet-control {
+  padding: 0;
+}
+
+/*Re-style geocoder*/
+.leaflet-control-geosearch {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  float: none !important;
+}
+.leaflet-control-geosearch-msg {
+  display: none;
+}
+
+.leaflet-control-geosearch ul {
+  margin: 10px 0 0 0;
+  padding: 5px;
+  width: 100%;
+}
+
+.leaflet-control-geosearch-msg ul {
+  list-style: none;
+  height: auto;
+  background: none;
+  padding: 0;
+}
+
+.leaflet-control-geosearch ul li {
+    border-radius: 4px;
+    margin: 2px 0;
+    padding: 4px;
+    text-indent: 4px;
+}
+
+.leaflet-container .leaflet-control-geosearch input {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px #e4e4e4 solid;
+  outline: none;
+}
+
+#search {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 20px;
+}
+
+#sidebar {
+  overflow: hidden;
+}
+
+#search_result {
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 90px;
+}
+
+.list-group-item {
+  display: block;
+  padding: 10px 20px;    
+  text-decoration: none;  
+  border-bottom: 1px solid #e4e4e4;
+  color: #0078A8;
+}
+
+.list-group-item:hover {
+  background-color: #eee;
+}
+
+.list-group-item-text {
+  color: #666;
+}
+
+.list-group-item-info {
+  width: 60%;
+  display: inline-block;
+}
+
+.list-group-item-action {  
+  float: right;
+  display: inline-block;
+}
+
+.list-group-item-action{
+  margin-top: 45px;
+}
+
+.btn:hover {
+  background-color: #229ACA;
+}
+
+.btn {
+  background-color: #0078A8;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 1px solid #004585;
+  color: white !important;
+  text-decoration: none;
+}
+
+.game {
+  width: 100%;
+  height: 100%;
+}
