@@ -5,10 +5,8 @@ var map = new Map('map', [sidebar]),
 
 map.setView([51.505, -0.09])
 
-map.onLocate(function(locations){
-  var location = locations[0],
-      marker = map.addMarker([location.Y, location.X]);
-
+map.onLocate(function(location){
+  var marker = location && map.addMarker([location.Y, location.X]);
   marker.bindPopup("Loading Geoid Height").openPopup()
 
   api.geoid(location.Y, location.X, function(geoid_height){

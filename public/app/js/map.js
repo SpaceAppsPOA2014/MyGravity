@@ -43,7 +43,24 @@ Map.prototype.panBy = function() {
 
 Map.prototype.onLocate = function(callback) {
 	this.mapView.on('geosearch_foundlocations', function(results){
-		callback(results.Locations)
+		var control = $('#leaflet-control-geosearch leaflet-control'),
+				resultList = $('#leaflet-control-geosearch-results');
+
+		control.addClass('active visible');
+		resultList.addClass('visible');
+
+		results.Locations.forEach(function (location) {
+			resultList.append('<li class="item truncate">'+location.Label+'</li>');
+
+			$('.item').click(function () {
+				callback(location);
+				control.removeClass('active visible');
+				resultList.removeClass('visible');
+
+				$('.item').remove();
+				$('#play').remove();
+			});
+		});
 	});
 };
 

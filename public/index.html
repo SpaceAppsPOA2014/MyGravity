@@ -14,11 +14,8 @@
 
 </head>
 <body>
-
   <div id="sidebar">
     <div id="search">
-      <!-- <input id="searchInput" type="text" placeholder="search"></input>
-      <button>Search</button> -->
     </div>
     <div id="new-location" class='ui blue button'>New Location</div>
     <div class='sugestions'>
@@ -29,26 +26,33 @@
 				<li>Porto Alegre (where the app was created)</li>
 			</ul>
 		</div>
+
     <iframe class="game" src="app/game/game.html"></iframe>
   </div>
   <div id="map"></div>
 
-	<script src="app/vendors/jquery/dist/jquery.min.js"></script>
-	<script src="app/vendors/leaflet-dist/leaflet.js"></script>
-	<script src="app/vendors/L.GeoSearch/src/js/l.control.geosearch.js"></script>
-	<script src="app/vendors/L.GeoSearch/src/js/l.geosearch.provider.google.js"></script>
-	<script src="app/vendors/L.GeoSearch/src/js/l.geosearch.provider.openstreetmap.js"></script>
-	<script src="app/vendors/leaflet-sidebar/src/L.Control.Sidebar.js"></script>
-	<script src="app/js/map.js"></script>
-	<script src="app/js/api.js"></script>
-	<script src="app/js/sidebar.js"></script>
-	<script src="app/js/app.js"></script>
-	<script src="app/js/semantic.min.js"></script>
+  <script src="app/vendors/jquery/dist/jquery.min.js"></script>
+  <script src="app/vendors/leaflet-dist/leaflet.js"></script>
+  <script src="app/vendors/L.GeoSearch/src/js/l.control.geosearch.js"></script>
+  <script src="app/vendors/L.GeoSearch/src/js/l.geosearch.provider.google.js"></script>
+  <script src="app/vendors/L.GeoSearch/src/js/l.geosearch.provider.openstreetmap.js"></script>
+  <script src="app/vendors/leaflet-sidebar/src/L.Control.Sidebar.js"></script>
+  <script src="app/js/map.js"></script>
+  <script src="app/js/api.js"></script>
+  <script src="app/js/sidebar.js"></script>
+  <script src="app/js/app.js"></script>
+  <script src="app/js/semantic.min.js"></script>
 
-	<script type="text/javascript">
-		// Move Geocorder inside the sidebar
-	$('#leaflet-control-geosearch-qry').attr("placeholder", "search for location...");
-    $('#leaflet-control-geosearch-qry').parent().appendTo($('#search'));
+  <script type="text/javascript">
+    // Move Geocorder inside the sidebar
+    var search = $('#search'),
+        searchInput = $('#leaflet-control-geosearch-qry');
+
+    searchInput.attr("placeholder", "search for location...");
+    searchInput.parent().appendTo(search);
+    search.children().addClass('ui dropdown icon input');
+    search.children().prepend('<i class="search icon"></i>');
+    $('#leaflet-control-geosearch-results').addClass('ui fluid vertical menu');
 
     var newLocationButton = $('#new-location').hide();
 
@@ -57,30 +61,28 @@
       iframeGame.find('#game').css('visibility', 'hidden');
 
       $('.game').attr('src', 'app/game/game.html');
-      
 
       newLocationButton.hide();
-      $('#search').show();
-	  $('#leaflet-control-geosearch-qry').val("");
-	  $('#leaflet-control-geosearch-qry').attr("placeholder", "search for location...");
-	  $('#leaflet-control-geosearch-qry').text("");
+
+  	  searchInput.val("");
+  	  searchInput.text("");
+
+      search.show();
+
       $('.leaflet-popup').remove();
     });
 
 
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-49930264-1']);
-  _gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-49930264-1']);
+    _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-
-
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
   </script>
 
 </body>
